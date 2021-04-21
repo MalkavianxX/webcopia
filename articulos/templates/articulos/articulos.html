@@ -1,0 +1,46 @@
+{% extends "tienda/base.html" %}
+
+
+{% load static %}
+
+{% block content %}
+
+
+
+  <section class="page-section clearfix">
+    <div class="container">
+      <div class="intro">
+        <div class="intro-text2 center-0 text-center bg-faded p-5 rounded">
+          <h2 class="section-heading mb-4" >
+            <span class="section-heading-upper">La venta y el precio es directamente</span>
+            <span class="section-heading-lower">Con el vendedor</span>
+          </h2>       
+        </div>
+      </div>
+    </div>
+  </section>
+    {%for articulo  in articulo %}
+      <section class="page-section clearfix">
+        <div class="container">
+          <div class="intro"> 
+          <a href="{% url 'contacto' %}">
+            <img class="intro-img img-fluid mb-3 mb-lg-0 rounded"src="{{articulo.imagen.url}}" alt="" style="width: 50%;">
+          </a>
+            <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+              <h2 class="section-heading mb-4" >
+                <a  href="{% url 'contacto' %}"class="linksCategorias">{{articulo.titulo}}</a>
+              </h2>
+              <div style="text-align: center; font-size: 1.0em">
+                <a href="{% url 'contacto' %}" class="linksCategorias">{{articulo.contenido}}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    {% endfor %}
+{% endblock  %} 
+
+
+
+
+

@@ -1,0 +1,43 @@
+{% extends "tienda/base.html" %}
+
+
+{% load static %}
+
+{% block content %}
+
+   <section class="page-section clearfix">
+    <div class="container">
+      <div class="intro">
+        <div class="intro-text2 center-0 text-center bg-faded p-5 rounded">
+          <h2 class="section-heading mb-4" >
+            <span class="section-heading-upper">A partir de 100 piezas</span>
+            <span class="section-heading-lower">Obtienes descuentos</span>
+          </h2>       
+        </div>
+      </div>
+    </div>
+  </section>
+<div calss="container">
+<div class="row">
+    {%for producto  in productos %}
+        {% if producto.categorias.nombre == "Collar" %}
+            <div class="col-md-3">
+                <div class="card" style="width: 100%; margin: 20px 20px;">
+                        <img src="{{producto.imagen.url}}"class="card-img-top">
+                        <div class="card-body" style="text-align: center;">
+                            <h7 class="card-title">{{producto.nombre}}</h7>
+                            <p class="card-text">{{producto.descripccion}}</p>
+                            <p class="card-text">&nbsp${{producto.precio}}</p>
+                        </div>
+                        <div class='card-footer text-center'>
+                            <a href="{% url 'vista' producto.id %}" class="btn btn-success">
+                                Detalles
+                            </a>
+                        </div>                         
+                </div>   
+            </div> 
+        {% endif %}
+    {% endfor %} 
+</div>  
+</div>
+{% endblock  %}

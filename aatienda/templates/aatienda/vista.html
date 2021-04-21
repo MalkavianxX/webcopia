@@ -1,0 +1,179 @@
+{% extends "tienda/base.html" %}
+
+{% load carrito_tags %}
+{% load static %}
+
+{% block content %} 
+
+  {%for producto  in productos %}  
+    {% if producto.categorias.nombre == "Otro" %}
+        {% if producto.dosponibilidad%}
+            <div id="container5">	       
+                <div class="product-details">
+                <h1>{{producto.nombre}}</h1>
+                <span class="hint-star star">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                </span>
+                <p class="information" >{{producto.descripccion}}</p>
+                <h5 style="color: green; float:left;" >Te redirigiremos a WhatsApp para poder adquirir este articulo</h5>
+
+                <h5 style="color: white; float:center;">Quedan: {{producto.stock}} pzas.</h5>
+                    <div class="control"> 
+                        <a class="btn" class="linksCategorias" href="https://wa.me/5217752246412/?text=Me%20interesa%20adquirir%20esta%20pieza%20especial%20con%20promocion,%20{{producto.nombre}}%20con%20id:%20{{producto.id}}"target="_blank">
+                        <span class="price">&nbsp${{producto.precio}}</span>
+                        <span class="shopping-cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i></span>
+                        <span class="buy">Lo quiero</span>
+                        </a>
+                    </div>
+                </div>  
+                <div class="product-image">   
+                <img src="{{producto.imagen.url}}" alt="">
+                </div>
+            </div>
+        {% else %}  
+            <div id="container6">	
+                <div class="product-details">
+                
+                <h1>{{producto.nombre}}</h1>
+                <span class="hint-star star">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                </span>
+                <p class="information" >{{producto.descripccion}}</p>
+                <h5 style="color: green; float:left;" >Te redirigiremos a WhatsApp para poder adquirir este articulo</h5>
+                <h5 style="color: white; float:center;">Quedan: {{producto.stock}} pzas.</h5>
+                    <div class="control"> 
+                        <a class="btn" class="linksCategorias" href="https://wa.me/5217752246412/?text=Me%20interesa%20adquirir%20esta%20pieza%20especial,%20{{producto.nombre}}%20con%20id:%20{{producto.id}}"target="_blank">
+                        <span class="price">&nbsp${{producto.precio}}</span>
+                        <span class="shopping-cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i></span>
+                        <span class="buy">Lo quiero</span>
+                        </a>
+                    </div>
+                </div>      
+                <div class="product-image">     
+                <img src="{{producto.imagen.url}}" alt="">
+                </div>
+            </div>    
+        {%endif%}
+    {%elif producto.categorias.nombre == "Para fabricacion"%} 
+        {% if producto.dosponibilidad%}
+            <div id="container5">	       
+                <div class="product-details">
+                <h1>{{producto.nombre}}</h1>
+                <span class="hint-star star">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                </span>
+                <p class="information" >{{producto.descripccion}}</p>
+                <h5 style="color: green; float:left;" >Te redirigiremos a WhatsApp para poder adquirir este articulo</h5>
+
+                <h5 style="color: white; float:center;">Quedan: {{producto.stock}} pzas.</h5>
+                    <div class="control"> 
+                        <a class="btn" class="linksCategorias" href="https://wa.me/5217752246412/?text=Me%20interesa%20adquirir%20este%20articulo%20por%20fabricacion%20de%20mayoreo:%20{{producto.nombre}}%20id:%20{{producto.id}}"target="_blank">
+                        <span class="price">&nbsp${{producto.precio}}</span>
+                        <span class="shopping-cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i></span>
+                        <span class="buy">Lo quiero</span>
+                        </a>
+                    </div>
+                </div>  
+                <div class="product-image">   
+                <img src="{{producto.imagen.url}}" alt="">
+                </div>
+            </div>
+        {% else %}  
+            <div id="container6">	
+                <div class="product-details">
+                
+                <h1>{{producto.nombre}}</h1>
+                <span class="hint-star star">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                </span>
+                <p class="information" >{{producto.descripccion}}</p>
+                <h5 style="color: green; float:left;" >Te redirigiremos a WhatsApp para poder adquirir este articulo</h5>
+                <h5 style="color: white; float:center;">Quedan: {{producto.stock}} pzas.</h5>
+                    <div class="control"> 
+                        <a class="btn" class="linksCategorias" href="https://wa.me/5217752246412/?text=Me%20interesa%20adquirir%20este%20articulo%20por%20fabricacion%20de%20mayoreo:%20{{producto.nombre}}%20id:%20{{producto.id}}"target="_blank">
+                        <span class="price">&nbsp${{producto.precio}}</span>
+                        <span class="shopping-cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i></span>
+                        <span class="buy">Lo quiero</span>
+                        </a>
+                    </div>
+                </div>      
+                <div class="product-image">     
+                <img src="{{producto.imagen.url}}" alt="">
+                </div>
+            </div>    
+        {%endif%}       
+    {%else%}
+        {% if producto.dosponibilidad%}
+            <div id="container5">	       
+                <div class="product-details">
+                <h1>{{producto.nombre}}</h1>
+
+                <span class="hint-star star">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                </span>
+                <p class="information" >{{producto.descripccion}}</p>
+                <h5 style="color: white; float:center;">Quedan: {{producto.stock}} pzas.</h5>
+                    <div class="control">     
+                    <a href="{% url 'carrito:agregar_producto' producto.id%}"class="btn">
+                        <span class="price">&nbsp${{producto.precio}}</span>
+                        <span class="shopping-cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i></span>
+                        <span class="buy">Lo quiero</span>
+                    </a>   
+                    </div>          
+                </div>  
+                <div class="product-image">   
+                <img src="{{producto.imagen.url}}" alt="">
+                </div>
+            </div>
+        {% else %}  
+        <div id="container6">	
+            <div class="product-details">
+            
+            <h1>{{producto.nombre}}</h1>
+            <span class="hint-star star">
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                <i class="fa fa-star-o" aria-hidden="true"></i>
+            </span>
+            <p class="information" >{{producto.descripccion}}</p>
+            <h5 style="color: white; float:center;">Quedan: {{producto.stock}} pzas.</h5>
+                <div class="control">  
+                
+                <a href="{% url 'carrito:agregar_producto' producto.id%}" class="btn"> 
+                    <span class="price">&nbsp${{producto.precio}}</span>
+                    <span class="shopping-cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i></span>
+                    <span class="buy">Lo quiero</span>
+                </a>   
+                </div>          
+            </div>      
+            <div class="product-image">     
+            <img src="{{producto.imagen.url}}" alt="">
+            </div>
+        </div>    
+        {%endif%}   
+    {%endif%}
+  {% endfor %}
+  {% include "carrito/detalle_carrito.html" %}
+{% endblock  %}

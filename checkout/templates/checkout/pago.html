@@ -1,0 +1,55 @@
+{% extends "tienda/base.html" %}
+{% load static %}
+
+{% block content %}
+
+   <section class="page-section clearfix">
+    <div class="container">
+      <div class="intro">
+        <div class="intro-text2 center-0 text-center bg-faded p-5 rounded">
+          </h1>
+              <p style="color: green; font-size:xx-large;">¡No guardamos ningun dato personal!</p>            
+          </h1>  
+            <div style="text-align: center; font-size: 1.0em">
+              Para garantizar la proteccion total de toda tu informacion.
+            </div>  
+        </div>
+      </div>
+    </div> 
+  </section>
+<div><p></p></div>
+<table class="table "style="width: 50%;height: 200px;">
+     <thead>
+        <tr style="background-color: rgba(17, 17, 15, 0.932);">
+            <th class="text-center" style="color: white;"><h3>Finalizar compra</h3></th>
+        </tr>
+    </thead> 
+    <tbody> 
+                <tr class="text-center" style="background-color: rgba(235, 235, 207, 0.932);">
+                    <td colspan="3">
+                        <a  href="{{approval_url}}">
+                            <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" height="80px" width="360px" src="{% static 'checkout/img/paypallogo.jpeg' %}"  alt="Check out with PayPal" />  
+                        </a>
+                    </td>
+                </tr>       
+                <tr class="text-center" style="background-color: rgba(235, 235, 207, 0.932);">
+                    <td colspan="3" class="text-center" style="color: white; font-size:xx-large;">
+                    </td>
+                </tr>                       
+                <tr class="text-center" style="background-color: rgba(235, 235, 207, 0.932);">
+                    <td colspan="3">
+                        <form  action="{% url 'check:hecho' %}" method="post">
+                            {% csrf_token %}
+                            <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" style="height: 50px;"
+                                data-key="{{STRIPE_PUBLISHABLE_KEY}}"
+                                data-description="Joyapan"
+                                data-amount="{{total_stripe}}"
+                                data-loacale="auto">
+                            </script>
+                    </td>
+
+                </tr>                          
+    </tbody>
+</table> 
+{% endblock  %}    
+  

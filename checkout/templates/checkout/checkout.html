@@ -1,0 +1,26 @@
+{% extends "tienda/base.html" %}
+
+{% load static %}
+{% block content %}
+
+
+   <section class="page-section clearfix">
+    <div class="container"> 
+      <div class="intro">
+        <div class="intro-text2 center-0 text-center bg-faded p-5 rounded">
+          <h2 class="section-heading mb-4" >
+            <span class="section-heading-lower">Datos de envio</span>
+          </h2>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+    <div class="contenedorFormulario">
+
+    <form  method="get"  action="{% url 'check:resumen' %}" style="text-align: center">
+        <table class="table "style="width: 70%;height: 300px;">{{formulario_envios}}</table>
+        <button  class="btn btn-sm btn-success" style="width:15%; color: green; height:10%;" type="submit"><h3 style="color: white;font-family: Arial, Helvetica, sans-serif;">Siguiente</h3></button>
+    </form>
+    </div>
+{% endblock  %}    

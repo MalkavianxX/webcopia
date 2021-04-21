@@ -1,0 +1,89 @@
+{% extends "tienda/base.html" %}
+
+
+{% load static %}
+
+{% block content %}
+
+
+<!--FACEBOOK-->
+   <section class="page-section clearfix">
+    <div class="container">
+      <div class="intro">
+      <a href="https://www.facebook.com/joyerosdelaltiplano"target="_blank">
+        <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{% static 'contacto/img/logof.png' %}" alt="" style="width: 50%;">
+      </a>   
+        <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+          <h2 class="section-heading mb-4" >
+            <a href="https://www.facebook.com/joyerosdelaltiplano"target="_blank"class="linksCategorias">Joyeros de Apan</a>
+          </h2>  
+        </div>
+      </div> 
+    </div>
+  </section> 
+<!--Instagram-->
+   <section class="page-section clearfix">
+    <div class="container">
+      <div class="intro">
+      <a href="https://www.instagram.com/joyapan_/"target="_blank">
+        <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{% static 'contacto/img/logoi.png' %}" alt="" style="width: 50%;">
+      </a> 
+        <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+          <h2 class="section-heading mb-4" >
+            <a href="https://www.instagram.com/joyapan_/"target="_blank"class="linksCategorias">Joyapan_</a>            
+          </h2>  
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+   <section class="page-section clearfix">
+    <div class="container">
+      <div class="intro">
+        <div class="intro-text2 center-0 text-center bg-faded p-5 rounded">
+          <h2 class="section-heading mb-4" >
+            <span class="section-heading-lower">Contactate con el CEO</span>
+          </h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+<!--Whatsapp-->
+   <section class="page-section clearfix">
+    <div class="container">
+      <div class="intro">
+      <!--Numero del gf-->
+      <a href="https://wa.me/5217752246412/?text=Te%20estoy%20enviando%20un%20mensaje%20desde%20Joyapan e-comerce"target="_blank">
+        <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{% static 'contacto/img/logow.png' %}" alt="" style="width: 50%;">
+      </a>  
+        <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+          <h2 class="section-heading mb-4" >
+              <a href="https://wa.me/5217752246412/?text=Te%20estoy%20enviando%20un%20mensaje%20desde%20Joyapan e-comerce"target="_blank"class="linksCategorias">Joyapan</a>            
+          </h2>  
+            <div style="text-align: center; font-size: 1.0em">
+              Contacto solo para mayoristas y pedidos especiales "Facturacion"
+            </div>          
+        </div>
+      </div> 
+    </div>
+  </section> 
+
+
+
+
+
+
+<div class="contenedorFormulario">
+
+<form action="" method="POST"  style="text-align: center">{% csrf_token %}
+    <table style="color: white; margin: 20px auto;">{{miFormulario}}</table>
+    <input type="submit" value="Enviar" style="width: 150px;">
+</form>
+
+
+</div>
+
+{% endblock  %}
