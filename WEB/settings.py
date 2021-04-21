@@ -26,7 +26,7 @@ SECRET_KEY = 'w*-q%j_b=xhvw323we-lpaoh$c3q-1r%zurc_0s)!*nv$%!@c-'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -85,18 +85,23 @@ WSGI_APPLICATION = 'WEB.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-DATABASES = {
-    'default': { 
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'joyapandb1',
-        'USER': 'postgres',
-        'PASSWORD': 'Rmpv54321',
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
+#DATABASES = {
+ #   'default': { 
+  #      'ENGINE': 'django.db.backends.postgresql_psycopg2',
+   #     'NAME': 'joyapandb1',
+    #    'USER': 'postgres',
+     #   'PASSWORD': 'Rmpv54321',
+      #  'HOST': '127.0.0.1',
+       # 'PORT': '5432',
 
-    }
+    #}
+#}
+import dj_database_url
+from decouple import config 
+DATABASES={
+    'default':dj_database_url.config(
+        default=config('DATABASE_URL'))
 }
-
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
 
@@ -144,7 +149,7 @@ MEDIA_ROOT =  os.path.join(BASE_DIR,'media')
 Cliente_Id="AT57_peUjz_M_FNOHo5Qbmgc16ft_-9YLpFQy85W51RoBlmwuw5fNDkeOx9G7uOMr3CrIr04Mx2Vgm_I"
 Cliente_Secret_Key="EM60643zxtyTJqzrvrYqRed4BPXlph7RdQDIhBJbAprmzC5NdZ0dwKFVqfa6Qp8xkmkrSFy69Q39ryJt"
 
-
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 EMAIL_BACKEND="django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST= 'smtp.googlemail.com'
 EMAIL_PORT= 587
