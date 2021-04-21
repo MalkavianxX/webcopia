@@ -27,4 +27,4 @@ urllib3==1.26.4
 stripe==2.56.0
 gunicorn
 whitenoise
-
+mercadopago==2.0.6
