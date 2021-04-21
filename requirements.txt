@@ -28,3 +28,5 @@ stripe==2.56.0
 gunicorn
 whitenoise
 mercadopago==2.0.6
+dj-database-url==0.5.0
+
