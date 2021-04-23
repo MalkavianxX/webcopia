@@ -32,4 +32,4 @@ urlpatterns = [
     path('carrito/',include ('carrito.urls')),
     path('checkout/',include('checkout.urls')),
 
-]+ static(settings.STATIC_URL, document_root=settings.MEDIA_ROOT)
+]
